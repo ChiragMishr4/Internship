@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+{% block title %}Download{% endblock %}
+
+{% block content %}
+<h1>Your file is ready!</h1>
+<p></p>
+<p></p>
+<p></p>
+<h2>Click on the download button to save your file on your system!</h2>
+
+<body>
+    <form method="GET" action="/download2">
+    <button class='btn btn-primary' id="download">Click Me To Begin Your Download!</button>
+    </form>
+    <p></p>
+    <p></p>
+    <p></p>
+    <a href='/'><button class="btn btn-primary" onclick="deleteFile()">Convert Another PDF</button></a>
+</body>
+<script>
+    function deleteFile() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open('GET','/delete',true);
+        xhttp.send();
+    }
+</script>
+
+{% endblock %}
